@@ -2,7 +2,7 @@
 Write a function that removes an element from the middle index and shifts other elements in the array to fill the new gap.
 
 ## Whiteboard Process
-No Whitebord
+![img](./Array%20Removes.png)
 
 ## Approach & Efficiency
 - Import math to use math.floor() from it to convert float number
