@@ -12,4 +12,5 @@ def removes(list):
 #main
 list1=[2,4,6,-8]
 list2=[42,8,15,23,42]
-print(removes(list2))
+list3=[]
+print(removes(list1))
