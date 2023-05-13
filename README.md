@@ -9,3 +9,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Removes|[Removes](./python/removes/removes.md)|
 |Binary Search|[Binary Search](./python/binarySearch/binarySearch.md)|
 |Sequential Search|[Sequential Search](./python/sequentialSearch/sequentialSearch.md)|
+|Linked List|[Linked List](./python/linked_list/linked_list.md)|
