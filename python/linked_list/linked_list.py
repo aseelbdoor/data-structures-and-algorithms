@@ -1,7 +1,9 @@
+
 class Node:
     def __init__(self,value,next=None):
         self.value=value
         self.next=next
+
     def __str__(self) -> str:
         if self.next==None:
             return f"Hi I am {self.value} the last node"
@@ -13,6 +15,7 @@ class LinkedList:
     def __init__(self,head=None):
         self.head=head
         LinkedList.head=head
+
     def __str__(self):
         if self.head==LinkedList.head:
             return f"Hi I am the Linked List my value is {self.head.value} and the next node after me is {self.head.next.value}"
@@ -36,11 +39,13 @@ class LinkedList:
             current = current.next
         a+="Null"
         return a
+    
     @classmethod
     def insert(cls,value):
         node=Node(value)
         node.next=cls.head
         cls.head=node
+
     @classmethod
     def traverse(cls) :
         linkedlist=[]
@@ -56,7 +61,6 @@ if __name__=="__main__":
     node_d=Node ("Alaa")
     node_H=Node ("Haneen",node_d)
     ll= LinkedList(node_H)
-    print(ll)
     LinkedList.insert("Aseel")
     print(LinkedList.traverse())
     print(LinkedList.to_string())

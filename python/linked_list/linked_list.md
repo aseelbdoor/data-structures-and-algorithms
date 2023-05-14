@@ -1,4 +1,6 @@
 # Singly Linked Lists
+## Whitebord
+![photo](./iwhitebord.png)
 ## Required for .venv
 `pip install pytest`
 ## Node
