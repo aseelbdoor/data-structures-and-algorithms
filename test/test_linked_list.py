@@ -54,3 +54,36 @@ def test_traverse():
     expected=['Aseel', 'Haneen', 'Alaa']
     assert actual == expected
 
+def test_append():
+    node_d=Node ("Alaa")
+    node_H=Node ("Haneen",node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append("Bdoor")
+    LinkedList.append("Aseel")
+    actual=str(Node.lastNode)
+    expected="Hi I am Aseel the last node"
+    assert actual==expected
+
+def test_insert_before():
+    node_d=Node ("Alaa")
+    node_H=Node ("Haneen",node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append("Bdoor")
+    LinkedList.append("Aseel")
+    LinkedList.insert_before("Aseel","Leen")
+    LinkedList.insert_before("Haneen","Haya")
+    actual=LinkedList.to_string()
+    expected="{Haya} -> {Haneen} -> {Alaa} -> {Bdoor} -> {Leen} -> {Aseel} -> Null"
+    assert actual==expected
+
+def test_insert_after():
+    node_d=Node ("Alaa")
+    node_H=Node ("Haneen",node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append("Bdoor")
+    LinkedList.append("Aseel")
+    LinkedList.insert_after("Haneen","Maysaa")
+    LinkedList.insert_after("Aseel","Haya")
+    actual=LinkedList.to_string()
+    expected="{Haneen} -> {Maysaa} -> {Alaa} -> {Bdoor} -> {Aseel} -> {Haya} -> Null"
+    assert actual==expected
