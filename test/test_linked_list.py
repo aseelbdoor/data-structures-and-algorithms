@@ -59,8 +59,8 @@ def test_append():
     node_H=Node ("Haneen",node_d)
     ll= LinkedList(node_H)
     LinkedList.append("Bdoor")
-    LinkedList.append("Aseel")
-    actual=str(Node.lastNode)
+    a=LinkedList.append("Aseel")
+    actual=str(a)
     expected="Hi I am Aseel the last node"
     assert actual==expected
 
@@ -87,3 +87,71 @@ def test_insert_after():
     actual=LinkedList.to_string()
     expected="{Haneen} -> {Maysaa} -> {Alaa} -> {Bdoor} -> {Aseel} -> {Haya} -> Null"
     assert actual==expected
+
+def test_kthFromEnd1():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(6)
+    expected="This place does not exist in this Linked List"
+    assert actual==expected
+
+def test_kthFromEnd2():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(-1)
+    expected=1
+    assert actual==expected
+
+def test_kthFromEnd3():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(0)
+    expected=2
+    assert actual==expected
+
+def test_kthFromEnd4():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(-3)
+    expected=8
+    assert actual==expected
+
+def test_kthFromEnd5():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(2)
+    expected=3
+    assert actual==expected
+
+def test_kthFromEnd6():
+    node_d=Node (8)
+    node_H=Node (3,node_d)
+    ll= LinkedList(node_H)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    actual=LinkedList.kthFromEnd(4)
+    expected="This place does not exist in this Linked List"
+    assert actual==expected
+
+def test_kthFromEnd7():
+    node_d=Node (8)
+    ll= LinkedList(node_d)
+    actual1=LinkedList.kthFromEnd(0)
+    actual2=LinkedList.kthFromEnd(-1)
+    expected=8
+    assert actual1==expected and actual2==expected

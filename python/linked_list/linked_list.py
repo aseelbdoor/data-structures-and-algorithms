@@ -1,11 +1,8 @@
-
+import math
 class Node:
-    lastNode=None
     def __init__(self,value,next=None):
         self.value=value
         self.next=next
-        if self.next==None:
-            Node.lastNode=self
     def __str__(self) -> str:
         if self.next==None:
             return f"Hi I am {self.value} the last node"
@@ -37,7 +34,7 @@ class LinkedList:
         a=""
         current=cls.head
         while current:
-            a=a+"{"+current.value+"} "
+            a=a+"{"+str(current.value)+"} "
             a+="-> "
             current = current.next
         a+="Null"
@@ -51,6 +48,7 @@ class LinkedList:
             return 
         node.next=cls.head
         cls.head=node
+        return node
 
     @classmethod
     def traverse(cls) :
@@ -74,6 +72,7 @@ class LinkedList:
             while current.next:
                 current = current.next
             current.next = node
+        return node
 
     @classmethod
     def insert_before(cls,value,newValue):
@@ -119,17 +118,49 @@ class LinkedList:
             current=current.next
             aftCurrent=current.next
         print(f"No change there is no node with value {value}")
+    @classmethod
+    def length(cls):
+        counter=0
+        current=cls.head
+        while current:
+            counter+=1
+            current=current.next
+        return counter
+    
+    @classmethod
+    def kthFromEnd(cls,k):
+        length=cls.length()
+        if k>=0 and k<length:
+            current=cls.head
+            location=length-k
+            for i in range(1,location):
+                current=current.next
+            else:
+                return current.value
+        elif k<0 and abs(k)<=length:
+            current=cls.head
+            location=-k
+            for i in range(1,location):
+                current=current.next
+            else:
+                return current.value
+        return "This place does not exist in this Linked List"
+    
+    @classmethod
+    def middle(cls):
+        middle=math.ceil(cls.length()/2)
+        current=cls.head
+        for i in range(1,middle):
+            current=current.next
+        return current.value
 
 if __name__=="__main__":
-    node_d=Node ("Alaa")
-    node_H=Node ("Haneen",node_d)
+    node_d=Node (8)
+    node_H=Node (3,node_d)
     ll= LinkedList(node_H)
-    LinkedList.append("Bdoor")
-    LinkedList.append("Aseel")
-    print(Node.lastNode)
+    LinkedList.append(2)
+    LinkedList.insert(1)
+    LinkedList.append(4)
     print(LinkedList.to_string())
-    LinkedList.insert_before("Aseel","Leen")
-    print(LinkedList.to_string())
-    LinkedList.insert_after("Haneen","Maysaa")
-    LinkedList.insert_after("Aseel","Lolo")
-    print(LinkedList.to_string())
+    print(LinkedList.kthFromEnd(8))
+    print(LinkedList.middle())
