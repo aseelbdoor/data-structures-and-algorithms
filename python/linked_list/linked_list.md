@@ -8,6 +8,8 @@ Insert Before
 ![photo](./insertb.png)
 Insert After
 ![photo](./inserta.png)
+k-th
+![photo](./kth.png)
 ## Required for .venv
 `pip install pytest`
 ## Node
@@ -37,6 +39,10 @@ Create a Node class that has properties for the value stored in the Node, and a 
   - **insert after**
     - arguments: value, new value
     - adds a new node with the given new value immediately after the first node that has the value specified
+  - **kthFromEnd**
+    - argument: a number, k, as a parameter.
+    - Return the node’s value that is k places from the tail of the linked list.
+    - You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## How to run the code 
 `python3 python/linked_list/linked_list.py`
@@ -67,5 +73,14 @@ Create a Node class that has properties for the value stored in the Node, and a 
 |head -> {1} -> {3} -> {2} -> X|2,5|head -> {1} -> {3} -> {2} -> {5} -> X|
 |head -> {1} -> {2} -> {2} -> X|2,5|hhead -> {1} -> {2} -> {5} -> {2} -> X|
 |head -> {1} -> {3} -> {2} -> X|4,5|No change, method exception|
+
+- **kthFromEnd**
+
+| Initial List | Method Args | Result |
+| :---        |    :----:   |    :----:   | 
+|head -> {1} -> {3} -> {8} -> {2} -> X|0|2|
+|head -> {1} -> {3} -> {8} -> {2} -> X|2|3|
+|head -> {1} -> {3} -> {8} -> {2} -> X|-1|1|
+|head -> {1} -> {3} -> {8} -> {2} -> X|4|Exception|
 
 [Open the code](./linked_list.py)
