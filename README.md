@@ -10,3 +10,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Binary Search|[Binary Search](./python/binarySearch/binarySearch.md)|
 |Sequential Search|[Sequential Search](./python/sequentialSearch/sequentialSearch.md)|
 |Linked List|[Linked List](./python/linked_list/linked_list.md)|
+|Stack and Queue|[stack and queue](./python/stack_and_queue/stack_and_queue.md)|
