@@ -1,3 +1,4 @@
+import pytest
 from python.stack_and_queue.stack import Stack
 from python.stack_and_queue.queue import Queue
 
@@ -18,18 +19,17 @@ def test_pop():
     stack.pop()
     stack.pop()
     stack.pop()
-    actual=stack.pop()
-    expected="There is nothing to remove in the stack"
-    assert actual == expected
+    with pytest.raises(Exception):
+        stack.pop()
 
 def test_peek():
     stack=Stack()
-    actual1=stack.peek()
-    expected1="This stake is empty so there is no top on it"
+    with pytest.raises(Exception):
+        stack.peek()
     stack.push(5)
     actual2=stack.peek()
     expected2=5
-    assert actual1 == expected1 and actual2==expected2
+    assert actual2==expected2
 
 def test_enqueue():
     q=Queue()
@@ -48,18 +48,17 @@ def test_dequeue():
     q.dequeue()
     q.dequeue()
     q.dequeue()
-    actual=q.dequeue()
-    expected="There is nothing to remove in this queue"
-    assert actual==expected
+    with pytest.raises(Exception):
+        q.dequeue()
 
 def test_queue_peek():
     q=Queue()
-    actual1=q.peek()
-    expected1="This queue dose not have front node"
+    with pytest.raises(Exception):
+        q.peek()
     q.enqueue("hi")
     q.enqueue("welcome")
     q.enqueue("bye")
     actual2=q.peek()
     expected2="hi"
-    assert actual1==expected1 and actual2==expected2
+    assert actual2==expected2
 
