@@ -37,3 +37,5 @@ Return the head of the merged linked list.
 |{1} -> {3} -> {2} -> null |{5} -> {9} -> {4} -> null|{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> null|
 |{1} -> {3} -> null|{5} -> {9} -> {4} -> null|{1} -> {5} -> {3} -> {9} -> {4} -> null|
 |{1} -> {3} -> {2} -> null|{5} -> {9} -> null|{1} -> {5} -> {3} -> {9} -> {2} -> null|
+
+[Click here to open the code](./ziplists.py)
