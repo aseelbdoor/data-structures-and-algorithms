@@ -16,43 +16,6 @@ class LinkedList:
 
     def __str__(self):
         return f"Hi I am the Linked List my value is {self.head.value} and the next node after me is {self.head.next.value}"
-    
-    def zipLists(self, other):
-        """
-        Merges two linked lists by alternating their elements.
-
-        Parameters:
-            self (LinkedList): The first linked list.
-            other (LinkedList): The second linked list.
-
-        Returns:
-            Node: The head node of the merged linked list.
-
-        Raises:
-            Exception: If both linked lists are empty.
-
-        Description:
-            This method merges two linked lists by alternating their elements.
-            The elements from the first linked list are appended first, followed by the elements from the second linked list.
-            The merged linked list is created and returned as a new linked list.
-        """
-        if not self.head and not other.head:
-            raise Exception("You can not merge two empty lists")
-        temp=[]
-        current1=self.head
-        current2=other.head
-        if not current1:
-            self.head=other.head
-        while current1 or current2:
-            if current1:
-                temp.append(current1)
-                current1=current1.next
-            if current2:
-                temp.append(current2)
-                current2=current2.next
-        for i in range(0,len(temp)-1):
-            temp[i].next=temp[i+1]
-        return self.head
             
     def to_string(self):
         """
@@ -75,6 +38,45 @@ class LinkedList:
         a+="Null"
         return a
     
+
+def zipLists(list, other):
+        """
+        Merges two linked lists by alternating their elements.
+
+        Parameters:
+            self (LinkedList): The first linked list.
+            other (LinkedList): The second linked list.
+
+        Returns:
+            Node: The head node of the merged linked list.
+
+        Raises:
+            Exception: If both linked lists are empty.
+
+        Description:
+            This method merges two linked lists by alternating their elements.
+            The elements from the first linked list are appended first, followed by the elements from the second linked list.
+            The merged linked list is created and returned as a new linked list.
+        """
+        if not list.head and not other.head:
+            raise Exception("You can not merge two empty lists")
+        temp=[]
+        current1=list.head
+        current2=other.head
+        if not current1:
+            list.head=other.head
+        while current1 or current2:
+            if current1:
+                temp.append(current1)
+                current1=current1.next
+            if current2:
+                temp.append(current2)
+                current2=current2.next
+        for i in range(0,len(temp)-1):
+            temp[i].next=temp[i+1]
+        return list.head
+
+    
 if __name__=="__main__":
     nodel1=Node(2)
     nodel2=Node(3,nodel1)
@@ -86,5 +88,5 @@ if __name__=="__main__":
     nodeli3=Node(5,nodeli2)
     list2=LinkedList(nodeli3)
     print(list2.to_string())
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     print(list1.to_string())
