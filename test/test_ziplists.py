@@ -1,5 +1,5 @@
 import pytest
-from python.ziplists.ziplists import Node,LinkedList
+from python.ziplists.ziplists import Node,LinkedList,zipLists
 
 def test_empty_tow_lists():
     list1=LinkedList()
@@ -13,7 +13,7 @@ def test_one_empty1():
     nodel3=Node(1,nodel2)
     list1=LinkedList(nodel3)
     list2=LinkedList()
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     actual=list1.to_string()
     expected="{1} -> {3} -> {2} -> Null"
     assert actual==expected
@@ -24,7 +24,7 @@ def test_one_empty2():
     nodeli2=Node(9,nodeli1)
     nodeli3=Node(5,nodeli2)
     list2=LinkedList(nodeli3)
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     actual=list1.to_string()
     expected="{5} -> {9} -> {4} -> Null"
     assert actual==expected
@@ -38,7 +38,7 @@ def test_same_long():
     nodeli2=Node(9,nodeli1)
     nodeli3=Node(5,nodeli2)
     list2=LinkedList(nodeli3)
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     actual=list1.to_string()
     expected="{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> Null"
     assert actual==expected
@@ -51,7 +51,7 @@ def test_one_longer1():
     nodeli2=Node(9,nodeli1)
     nodeli3=Node(5,nodeli2)
     list2=LinkedList(nodeli3)
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     actual=list1.to_string()
     expected="{1} -> {5} -> {3} -> {9} -> {4} -> Null"
     assert actual==expected
@@ -64,7 +64,7 @@ def test_one_longer2():
     nodeli2=Node(9)
     nodeli3=Node(5,nodeli2)
     list2=LinkedList(nodeli3)
-    list1.zipLists(list2)
+    zipLists(list1,list2)
     actual=list1.to_string()
     expected="{1} -> {5} -> {3} -> {9} -> {2} -> Null"
     assert actual==expected
