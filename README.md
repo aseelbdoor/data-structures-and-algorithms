@@ -15,3 +15,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Stack Queue Pseudo|[Stack Queue Pseudo](./python/stack_queue_pseudo/stack_queue_pseudo.md)|
 |Stack Queue Animal Shelter|[Stack Queue Animal Shelter](./python/stack_queue_animal_shelter/stack_queue_animal_shelter.md)|
 |Stack Queue Bracket|[Stack Queue Animal Shelter](./python/stack_queue_brackets/stack_queue_brackets.md)|
+|Binary Tree|[Binary Tree](./python/tree/binarySearch.md)|
