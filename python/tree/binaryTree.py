@@ -60,7 +60,23 @@ class binaryTree:
       arr.append(root.value)
     _walk(self.root)
     return arr
+  
+  def maximum(self):
+    if self.root is None:
+        return
+    value=[self.root.value]
+    def _walk(root):
+        if root.value>value[0]:
+          value[0]=root.value
+        if root.left :
+          _walk(root.left)
+        if root.right :
+          _walk(root.right)
+    _walk(self.root)
+    return value[0]
     
+
+
 class  binarySearch_tree(binaryTree):
     def __init__(self):
       super().__init__()
@@ -96,16 +112,20 @@ class  binarySearch_tree(binaryTree):
 
 if __name__ == "__main__":
   tree = binarySearch_tree()
-  tree.root= Tnode(50)
-  tree.root.left=Tnode(20)
-  tree.root.right = Tnode(53)
-  tree.root.left.left = Tnode(11)
-  tree.root.left.right = Tnode(22)
-  tree.root.right.right = Tnode(60)
+  tree.root= Tnode(2)
+  tree.root.left=Tnode(7)
+  tree.root.right = Tnode(5)
+  tree.root.left.left = Tnode(2)
+  tree.root.left.right = Tnode(6)
+  tree.root.left.right.left = Tnode(5)
+  tree.root.left.right.right = Tnode(11)
+  tree.root.right.right = Tnode(9)
+  tree.root.right.right.left = Tnode(4)
   print(tree.pre_order() )
   print("###############")
+  print(tree.maximam())
   # tree.add(55)
   # tree.add(60)
   # tree.add(60)
-  print(tree.pre_order() )
-  print(tree.contains(60))
+  # print(tree.pre_order() )
+  # print(tree.contains(60))
