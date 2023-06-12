@@ -11,6 +11,10 @@ Define a method for each of the depth first traversals:
 - in order
 - post order
 
+find maximum value
+- Arguments: none
+- Returns: number
+
 Each depth first traversal method should return an array of values, ordered appropriately.
 
 **Binary Search Tree** 
@@ -24,6 +28,9 @@ This class should be a sub-class (or your languages equivalent) of the Binary Tr
 - Contains
   - Argument: value
   - Returns: boolean indicating whether or not the value is in the tree at least once.
+
+## Whiteboard Process
+![max](./C.png)
 
 ## Approach & Efficiency
 **pre order**  .. Time : O(n) / Space : O(n)
@@ -80,6 +87,22 @@ This class should be a sub-class (or your languages equivalent) of the Binary Tr
     - Recursively call _walk on the right child of the current node (root.right) to continue searching for the value in the right subtree.
 - Call _walk on the root of the binary search tree (self.root) and the given value to start the search process.
 - Return the result of the _walk function, which will be either True if the value is found or False if it is not found.
+
+**Maximum** .. Time : O(n) / Space : O(1)
+
+- First, the method checks if the root of the binary tree (self.root) is None. If it is, indicating an empty tree, the method returns None.
+
+- If the root is not None, a list named value is initialized with the root value. This list is used to store the maximum value during the traversal.
+
+- The method defines an inner function named _walk that performs the recursive traversal of the tree to find the maximum value.
+
+- Inside the _walk function, the current node's value is compared with the value stored in the value list. If the current node's value is greater than the value in the list, it is updated as the new maximum value.
+
+- The _walk function then recursively calls itself on the left child of the current node (root.left) and the right child of the current node (root.right) if they exist.
+
+- The traversal continues until all nodes have been visited.
+
+- Finally, after the traversal is completed, the method returns the maximum value stored in the value list, which represents the maximum value in the binary tree.
 
 ## Solution
 To run the code: `python3 python/tree/binaryTree.py`

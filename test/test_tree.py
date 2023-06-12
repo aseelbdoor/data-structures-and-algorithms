@@ -68,3 +68,18 @@ def test_contain():
     tree.root.left.right = Tnode(22)
     tree.root.right.right = Tnode(60)
     assert tree.contains(60) and tree.contains(22)
+
+def test_maximam():
+   tree = binarySearch_tree()
+   tree.root= Tnode(2)
+   tree.root.left=Tnode(7)
+   tree.root.right = Tnode(5)
+   tree.root.left.left = Tnode(2)
+   tree.root.left.right = Tnode(6)
+   tree.root.left.right.left = Tnode(5)
+   tree.root.left.right.right = Tnode(11)
+   tree.root.right.right = Tnode(9)
+   tree.root.right.right.left = Tnode(4)
+   actual=tree.maximam()
+   expected=11
+   assert actual==expected
