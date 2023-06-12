@@ -1,11 +1,14 @@
-from assest import Node,Queue,Stack
+# from assest import Queue
+from python.tree.assest import Queue
+
+
 class Tnode:
   def __init__(self,value):
     self.value=value
     self.right= None
     self.left = None
 
-class Tree:
+class binaryTree:
   def __init__(self):
     self.root=None
 
@@ -27,12 +30,9 @@ class Tree:
   def pre_order(self):
     arr=[]
     def _walk(root):
-      #root
       arr.append(root.value)
-      #left
       if root.left :
         _walk(root.left)
-      #right
       if root.right :
         _walk(root.right)
     _walk(self.root)
@@ -41,32 +41,71 @@ class Tree:
   def in_order(self):
     arr=[]
     def _walk(root):
-      #left
       if root.left :
         _walk(root.left)
-      #root
       arr.append(root.value)
-      #right
+
       if root.right :
         _walk(root.right)
     _walk(self.root)
     return arr
+  
+  def post_order(self):
+    arr=[]
+    def _walk(root):
+      if root.left :
+        _walk(root.left)
+      if root.right :
+        _walk(root.right)
+      arr.append(root.value)
+    _walk(self.root)
+    return arr
     
-      
-    
-    
+class  binarySearch_tree(binaryTree):
+    def __init__(self):
+      super().__init__()
+
+    def add(self,value):
+      if self.root is None:
+        self.root = Tnode(value)
+        return
+      def _walk(root,value):
+        if root.value> value:
+          if root.left :
+            _walk(root.left,value)
+          else:
+            root.left=Tnode(value)
+        if root.value<=value:
+          if root.right :
+            _walk(root.right,value)
+          else:
+            root.right=Tnode(value)
+      _walk(self.root,value)
+
+    def contains(self,value):
+      def _walk(root,value):
+        if root is None:
+          return False
+        if root.value== value:
+          return True
+        if root.value> value:
+          return _walk(root.left,value)
+        if root.value<value:
+          return _walk(root.right,value)
+      return _walk(self.root,value)
 
 if __name__ == "__main__":
-  tree = Tree()
-  tree.root= Tnode(10)
+  tree = binarySearch_tree()
+  tree.root= Tnode(50)
   tree.root.left=Tnode(20)
-  tree.root.right = Tnode(50)
-  tree.root.left.left = Tnode(30)
-  tree.root.left.right = Tnode(40)
-  tree.root.right.left = Tnode(60)
-  Tnode(20).left=Tnode(30)
-  # print(Tnode(20).left)
-  # print(tree.breadth_first())
-  tree.pre_order() 
+  tree.root.right = Tnode(53)
+  tree.root.left.left = Tnode(11)
+  tree.root.left.right = Tnode(22)
+  tree.root.right.right = Tnode(60)
+  print(tree.pre_order() )
   print("###############")
-  tree.in_order()
+  # tree.add(55)
+  # tree.add(60)
+  # tree.add(60)
+  print(tree.pre_order() )
+  print(tree.contains(60))
