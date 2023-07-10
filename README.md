@@ -16,3 +16,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Stack Queue Animal Shelter|[Stack Queue Animal Shelter](./python/stack_queue_animal_shelter/stack_queue_animal_shelter.md)|
 |Stack Queue Bracket|[Stack Queue Animal Shelter](./python/stack_queue_brackets/stack_queue_brackets.md)|
 |Binary Tree|[Binary Tree](./python/tree/binarySearch.md)|
+|Insertion Sort|[Insertion Sort](./python/sorting/insertion/insertion_sort.md)|

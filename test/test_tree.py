@@ -80,6 +80,6 @@ def test_maximam():
    tree.root.left.right.right = Tnode(11)
    tree.root.right.right = Tnode(9)
    tree.root.right.right.left = Tnode(4)
-   actual=tree.maximam()
+   actual=tree.maximum()
    expected=11
    assert actual==expected
