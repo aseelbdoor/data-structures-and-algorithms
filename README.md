@@ -19,3 +19,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Insertion Sort|[Insertion Sort](./python/sorting/insertion/insertion_sort.md)|
 |Merge Sort|[Merge Sort](./python//sorting/merge/merge_sort.md)|
 |Sorting Objects|[Sorting Objects](./python/sorting/Comparisons/sort.md)|
+|Hash Table|[hashtable](./python/hashtable/hashtable.md)|
