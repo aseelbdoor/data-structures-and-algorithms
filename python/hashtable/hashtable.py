@@ -40,6 +40,7 @@ class HashTable:
     self.__size=size
     self.__buckets=[None] *size
     self.keys = []
+    self.repeat=[]
     
   
   def __hash(self,key):
@@ -102,3 +103,40 @@ class HashTable:
     Returns a list of all the  keys present in the Hashtable.
     '''
     return self.keys
+  
+  def repeated_word(self,string):
+    """
+        Find the first word that occurs more than once in the given string.
+
+        Parameters:
+            string (str): The input string to search for repeated words.
+
+        Returns:
+            str: A string describing the first word that occurred more than once
+                 and the number of times it was repeated.
+        Raises:
+            Exception: If the input string is empty (contains no words).
+    """
+    string=string.strip().lower().split()
+    if len(string)==0:
+      raise Exception("There is no words in this string")
+    cou=0 
+    for key in string:
+      key=key.strip(',').strip('.').strip('!').strip('?')
+      index = self.__hash(key)
+      if self.__buckets[index] is None:
+        ll = LinkedList()
+        self.__buckets[index] = ll
+        self.__buckets[index].insert([key,1])
+      else:
+        curr = self.__buckets[index].head
+        while curr :
+          if curr.value[0] == key:
+            if cou==0:
+              cou+=1
+              self.repeat=curr.value
+            curr.value[1]=curr.value[1]+1
+          curr = curr.next  
+      self.keys.append(key)
+    return f'The first word to occur more than once in this string is ({self.repeat[0]}) that repeated : {self.repeat[1]} times'
+  
