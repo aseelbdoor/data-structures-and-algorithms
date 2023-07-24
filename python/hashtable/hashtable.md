@@ -32,6 +32,9 @@ Create a Node class that has properties for the value stored in the Node, and a 
   - **hash**
     - Arguments: key
     - Returns: Index in the collection for that key
+  - **repeated_word**
+    - Arguments: string
+    - Returns: first word to occur more than once in a string
 
 
 ## How to run the code 

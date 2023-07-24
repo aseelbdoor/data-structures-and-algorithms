@@ -40,6 +40,7 @@ class HashTable:
     self.__size=size
     self.__buckets=[None] *size
     self.keys = []
+    self.repeat=[]
     
   
   def __hash(self,key):
@@ -102,3 +103,35 @@ class HashTable:
     Returns a list of all the  keys present in the Hashtable.
     '''
     return self.keys
+  
+  def repeated_word(self,string):
+    string=string.strip().lower().split()
+    if len(string)==0:
+      raise Exception("There is no words in this string")
+    cou=0 
+    for key in string:
+      key=key.strip(',').strip('.').strip('!').strip('?')
+      index = self.__hash(key)
+      if self.__buckets[index] is None:
+        ll = LinkedList()
+        self.__buckets[index] = ll
+        self.__buckets[index].insert([key,1])
+      else:
+        curr = self.__buckets[index].head
+        while curr :
+          if curr.value[0] == key:
+            if cou==0:
+              cou+=1
+              self.repeat=curr.value
+            curr.value[1]=curr.value[1]+1
+          curr = curr.next  
+      self.keys.append(key)
+    return f'The first word to occur more than once in this string is ({self.repeat[0]}) that repeated : {self.repeat[1]} times'
+  
+
+if __name__=="__main__":
+  ht = HashTable()
+  a="Once upon a time, there was a brave princess who..."
+  b="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
+  c="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
+  print(ht.repeated_word(''))
