@@ -105,6 +105,18 @@ class HashTable:
     return self.keys
   
   def repeated_word(self,string):
+    """
+        Find the first word that occurs more than once in the given string.
+
+        Parameters:
+            string (str): The input string to search for repeated words.
+
+        Returns:
+            str: A string describing the first word that occurred more than once
+                 and the number of times it was repeated.
+        Raises:
+            Exception: If the input string is empty (contains no words).
+    """
     string=string.strip().lower().split()
     if len(string)==0:
       raise Exception("There is no words in this string")
@@ -128,10 +140,3 @@ class HashTable:
       self.keys.append(key)
     return f'The first word to occur more than once in this string is ({self.repeat[0]}) that repeated : {self.repeat[1]} times'
   
-
-if __name__=="__main__":
-  ht = HashTable()
-  a="Once upon a time, there was a brave princess who..."
-  b="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
-  c="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
-  print(ht.repeated_word(''))
