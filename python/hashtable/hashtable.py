@@ -139,4 +139,3 @@ class HashTable:
           curr = curr.next  
       self.keys.append(key)
     return f'The first word to occur more than once in this string is ({self.repeat[0]}) that repeated : {self.repeat[1]} times'
-  
