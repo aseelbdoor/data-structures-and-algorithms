@@ -71,6 +71,19 @@ class binaryTree:
 
 
 def tree_intersection(tr1,tr2):
+    """
+    Finds the common values between two binary trees.
+
+    Parameters:
+        tr1 (BinaryTree): The first binary tree.
+        tr2 (BinaryTree): The second binary tree.
+
+    Returns:
+        list: A list of common values found in both trees.
+
+    Raises:
+        Exception: If either of the binary trees is empty (has no root).
+    """
     if (tr1.root is None) or (tr2.root is None):
       raise Exception("There is no values found in both trees")
     ht=HashTable()
