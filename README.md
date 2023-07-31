@@ -21,3 +21,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Sorting Objects|[Sorting Objects](./python/sorting/Comparisons/sort.md)|
 |Hash Table|[hashtable](./python/hashtable/hashtable.md)|
 |Tree Intersection|[Tree Intersection](./python/tree_intersection/tree_intersection.md)|
+|Hashmap Left Join|[Hashmap Left Join](./python/hashmap_left_join/hashmap_left_join.md)|
