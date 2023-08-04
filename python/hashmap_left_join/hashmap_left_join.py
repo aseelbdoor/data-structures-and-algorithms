@@ -62,8 +62,20 @@ class HashTable:
     return self.keys
   
 def left_join(ht1,ht2):
-  keys1=ht1.keys()
-  keys2=ht2.keys()
+  """
+    Perform a left join operation on two hash tables.
+
+    Parameters:
+        ht1 (HashTable): The first hash table.
+        ht2 (HashTable): The second hash table.
+
+    Returns:
+        list: A list of lists containing the left join result.
+            Each inner list contains [key, value from ht1, value from ht2 or 'Null'].
+
+  """
+  keys1=ht1.keys
+  keys2=ht2.keys
   baselist=[]
   for i in keys1:
     new=[i]
@@ -71,11 +83,7 @@ def left_join(ht1,ht2):
     if i in keys2:
       new.append(ht2.get(i))
     else:
-      new.append(None)
+      new.append('Null')
     baselist.append(new)
   return baselist
 
-
-
-if __name__=="__main__":
-  pass
