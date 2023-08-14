@@ -66,7 +66,7 @@ class Graph:
         if end_vertix not in self.__adj_list:
             raise KeyError("End vertex is not found")
         edge1 = Edge(end_vertix, weight)
-        edge2 = Edge(start_vertix)
+        edge2 = Edge(start_vertix, weight)
         self.__adj_list[start_vertix].append(edge1)
         self.__adj_list[end_vertix].append(edge2)
 
