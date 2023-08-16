@@ -91,7 +91,7 @@ class Graph:
       A rguments: vertex
       Returns a collection of edges connected to the 
       given vertex
-      Include the weight of the connection in the                      returned collection
+      Include the weight of the connection in the returned collection
       Empty collection returned if there are no vertices
       '''
       # return self.__adj_list[vertix]
@@ -130,4 +130,19 @@ class Graph:
                     visted.add(neighbor)
 
         return result
+    
+    def depth_first(self, node):
+        visited = set()
+        traversal_result = []
+        
+        def dfs_helper(node):
+            visited.add(node)
+            traversal_result.append(node)
+            
+            for neighbor in self.graph[node]:
+                if neighbor not in visited:
+                    dfs_helper(neighbor)
+        
+        dfs_helper(node)
+        return traversal_result
     
