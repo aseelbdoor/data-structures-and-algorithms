@@ -23,3 +23,4 @@ You can find in this repo multiple function created  with python to solve proble
 |Tree Intersection|[Tree Intersection](./python/tree_intersection/tree_intersection.md)|
 |Hashmap Left Join|[Hashmap Left Join](./python/hashmap_left_join/hashmap_left_join.md)|
 |Graph|[graph](./python/graph/graph.md)|
+|Graph Business Trip|[Graph Business Trip](./python/graph/business_trip.md)|
