@@ -130,4 +130,27 @@ class Graph:
                     visted.add(neighbor)
 
         return result
-    
+
+    def depth_first(self,start_vertix):
+        """
+    Perform a depth-first traversal on the graph starting from a specified vertex.
+
+    Parameters:
+        start_vertix (Vertex): The vertex to start the depth-first traversal from.
+
+    Returns:
+        list: A list of vertex values representing the traversal order.
+    """
+        result = []
+        visted = set()
+        def walk(parent):
+            if parent not in visted:
+                visted.add(parent)
+                result.append(parent.value)
+                neighbors =self.get_neighbors(parent)
+                for edge in neighbors:
+                    neighbor = edge.vertix
+                    walk(neighbor)
+
+        walk(start_vertix)
+        return result

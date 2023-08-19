@@ -37,6 +37,12 @@ Is used to represent individual vertices or nodes in a graph. A vertex typically
     - Arguments: start_vertex
     - Returns:  A list containing the values of the vertices visited during the traversal in the order they were traversed.
 
+  - **depth_first**
+    - Arguments: Node (Starting point of search)
+    - Return: A collection of nodes in their pre-order depth-first traversal order
+    - Program output: Display the collection
+    - Whiteboard ![Whiteboard](./depth.png)
+
 ## How to run the code 
 `python3 python/graph/graph.py`
 

@@ -68,3 +68,8 @@ def test_one_vertex():
     expected=["A"]
     assert actual==expected
 
+def test_depth_first(filled_graph):
+    graph,a=filled_graph
+    actual=graph.depth_first(a)
+    expected=['A', 'B', 'D', 'E', 'C']
+    assert actual == expected
