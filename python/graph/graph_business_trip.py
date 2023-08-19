@@ -2,6 +2,16 @@
 from python.graph.graph import Graph
 
 def business_trip(gr,arr):
+    """
+    Calculate the cost of a business trip through a weighted graph.
+
+    Parameters:
+        gr (Graph): The graph representing locations and connections.
+        arr (list): An array of vertex values representing the trip route.
+
+    Returns:
+        str or None: A string containing the calculated cost with dollar sign ($) or None if the trip is not possible.
+    """
     vertices=gr.get_vertices()
     verticex=[]
     for i in arr:
