@@ -91,7 +91,7 @@ class Graph:
       A rguments: vertex
       Returns a collection of edges connected to the 
       given vertex
-      Include the weight of the connection in the                      returned collection
+      Include the weight of the connection in the returned collection
       Empty collection returned if there are no vertices
       '''
       # return self.__adj_list[vertix]
